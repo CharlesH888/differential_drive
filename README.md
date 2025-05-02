@@ -8,9 +8,6 @@ matplotlib:
 
     - pip install matplotlib
 
-unittest: 
-
-    - pip install unittest
 
 ## Differential Drive PID Controller Simulation
 
