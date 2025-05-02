@@ -91,17 +91,14 @@ class Plot():
         point.set_markersize(15)
         
         def update_point(i):
-            if i == len_x-1:
-                plt.close(fig)
-            else:
-                x = self.x_path[i]
-                y = self.y_path[i]
-                point.set_data([x], [y])
-                if(abs(targets[self.target_count].x - x) + abs(targets[self.target_count].y - y) < 0.2):
-                    s1.plot(targets[self.target_count].x, targets[self.target_count].y, 'bo')
-                    self.target_count +=1
+            x = self.x_path[i]
+            y = self.y_path[i]
+            point.set_data([x], [y])
+            if(abs(targets[self.target_count].x - x) + abs(targets[self.target_count].y - y) < 0.1):
+                s1.plot(targets[self.target_count].x, targets[self.target_count].y, 'bo')
+                self.target_count +=1
 
-                return point,
+            return point,
     
         # Call the animation functions
         point_ani = animation.FuncAnimation(fig, update_point, frames=len_x, interval=10, blit=False, repeat = False)
@@ -109,6 +106,6 @@ class Plot():
         ani = animation.FuncAnimation(fig, update, frames = len_x, interval=10, blit=False, repeat = False)
         
         plt.show()
-        plt.close('all')
+        #plt.close('all')
         return targets_reached
 

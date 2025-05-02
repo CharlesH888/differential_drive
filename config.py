@@ -11,12 +11,12 @@ class Config():
     angular_speed_step = 0.1 # rad/s
     linear_speed_step = 0.05 # m/s
 
-    P = 0.8
-    I = 0.01
-    D = .001
+    P = 1.0
+    I = 0.001
+    D = 0.001
 
     dt = 0.1  # Seconds
-    arrive_clearance = 0.2 # Meters
+    arrive_clearance = 0.1 # Meters
 
     start_position = State(0, 0, 0)
     target_locations = [State(5, 5, 0),
